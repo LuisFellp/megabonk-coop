@@ -1,0 +1,69 @@
+MEGABONK COOP v@VERSION@ - 2 jogadores via IP / Radmin
+=====================================================
+INSTALAR (os DOIS jogadores) - serve para instalar OU atualizar
+1. Extraia o zip em qualquer lugar (area de trabalho, por ex).
+   Extraia TUDO (a pasta "files" tem que ficar ao lado do INSTALAR.bat).
+2. FECHE o Megabonk.
+3. De dois cliques em INSTALAR.bat. Ele faz instalacao LIMPA:
+   - guarda um backup dos plugins/configs antigos numa pasta
+     "backup_antigo_..." ao lado do instalador;
+   - apaga o BepInEx antigo (cache, interop, plugins) e arquivos soltos da
+     v1 (LEIAME.txt, winhttp.dll, doorstop_config.ini, pasta dotnet);
+   - instala a versao nova e confere se ficou tudo no lugar.
+   Os arquivos originais do jogo e os seus saves NAO sao tocados.
+   ATENCAO: outros mods que voce tenha no BepInEx tambem saem (ficam no backup).
+4. Abra o jogo pelo Steam. A 1a vez demora 1-2 min carregando (normal).
+
+ATUALIZACAO RAPIDA: se voce so quer trocar o mod por uma versao nova, use o
+pacote pequeno "ATUALIZAR" (ele so troca a DLL; nao precisa reinstalar).
+IMPORTANTE: os DOIS jogadores precisam estar na MESMA versao do mod.
+O INSTALAR.bat mantem os arquivos que o BepInEx gera do jogo (interop), assim
+a abertura depois de reinstalar e rapida.
+
+VOLTAR AO JOGO ORIGINAL: DESINSTALAR.bat (remove o BepInEx e os mods).
+Para ter certeza: Steam > Megabonk > Propriedades > Arquivos instalados >
+Verificar integridade.
+
+JOGAR (menu do COOP, aparece sozinho no menu principal do jogo)
+1. Os dois entram na mesma rede (Radmin VPN) e abrem o jogo.
+2. HOST: clique em HOSPEDAR. O menu mostra o seu IP (o do Radmin primeiro) com
+   o botao COPIAR. Mande para o amigo.
+3. AMIGO: cole o IP (botao COLAR ou Ctrl+V) e clique em ENTRAR NO HOST. Os IPs
+   que voce ja usou ficam como botoes para a proxima vez.
+   Um cartao com uma lista de verificacao mostra: conectado, mesma versao,
+   sessao recebida, host pronto, mapas sincronizados. Se algo falhar, ele diz
+   o que conferir (e tem o botao REFAZER).
+4. O HOST clica em JOGAR. O AMIGO ENTRA SOZINHO 3 segundos depois (entrada
+   automatica; desligavel em OPCOES). Quando os dois terminarem de gerar o
+   mapa, o chip no canto da tela fica verde: "COOP: SINCRONIZADO".
+5. Se alguem morrer: volte ao menu. Com a entrada automatica voce volta para a
+   run do host e RECEBE de uma vez todo o XP e ouro que a dupla ja somou
+   (mesmo nivel de antes).
+
+TECLAS
+  T  chat      G  marcar o ponto para onde voce olha (o amigo ve por 10 s)
+  H  teleportar ate o amigo (so a mais de 12 m; recarga de 45 s)
+  F7 abrir/fechar o menu COOP      F10 desconectar
+
+O QUE E COMPARTILHADO
+- Mapa, inimigos, chefes, dano, morte e projeteis (o host manda; o amigo ve).
+- XP e OURO: tudo que um ganha o outro ganha inteiro (soma, nao divisao).
+  Gastar ouro continua individual.
+- Troca de fase (portal): um entra, o outro vai junto.
+- O jogo nao pausa; voce fica invencivel enquanto uma janela esta aberta.
+- Vida dos inimigos x1.5 enquanto os dois estao na run (host; muda em OPCOES).
+- Voce ve o amigo com o nome Steam dele, distancia, barra de vida e seta na borda da tela.
+- Placar no canto da tela: dano e abates de cada um.
+O que cada um faz sozinho: loot do chao, abrir baus e santuarios. Santuario de desafio (duas
+espadas), ovo de missao, tumulos e caixoes do cemiterio geram inimigos SO PARA QUEM ATIVOU;
+o botao de INVOCAR O CHEFE pede ao host, e o chefe e dos dois.
+
+PROBLEMAS?
+Menu COOP -> OPCOES -> SALVAR O LOG NA AREA DE TRABALHO, e mande o arquivo coop-log-*.log DOS DOIS
+(ou o BepInEx\LogOutput.log). O arquivo RELATORIO.md explica o que foi corrigido e por que.
+Limitacoes: so 2 jogadores; depende do Megabonk 1.0.69; algumas armas passivas
+podem nao aparecer no outro lado.
+
+CREDITOS E LICENCAS: BepInEx 6 (LGPL-2.1), Harmony e Il2CppInterop vem no pacote
+completo. Mod nao oficial feito com ajuda de IA (Claude). Nenhum arquivo do jogo
+e distribuido. As pontuacoes de uma run coop NAO vao para o ranking da Steam.

@@ -1,0 +1,22 @@
+<Project Sdk="Microsoft.NET.Sdk">
+  <PropertyGroup>
+    <TargetFramework>net6.0</TargetFramework>
+    <AssemblyName>MegabonkCoop</AssemblyName>
+    <RootNamespace>MegabonkCoop</RootNamespace>
+    <LangVersion>latest</LangVersion>
+    <AllowUnsafeBlocks>true</AllowUnsafeBlocks>
+    <ImplicitUsings>disable</ImplicitUsings>
+    <Nullable>disable</Nullable>
+    <DeterministicSourcePaths>true</DeterministicSourcePaths>
+    <PathMap>$(MSBuildProjectDirectory)=src</PathMap>
+    <GameDir Condition="'$(GameDir)'=='' And '$(MEGABONK_DIR)'!=''">$(MEGABONK_DIR)</GameDir>
+    <GameDir Condition="'$(GameDir)'==''">C:\Program Files (x86)\Steam\steamapps\common\Megabonk</GameDir>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="$(GameDir)\BepInEx\core\*.dll"><Private>false</Private></Reference>
+    <Reference Include="$(GameDir)\BepInEx\interop\*.dll"><Private>false</Private></Reference>
+  </ItemGroup>
+  <Target Name="Deploy" AfterTargets="Build" Condition="'$(NoDeploy)'!='1'">
+    <Copy SourceFiles="$(OutputPath)MegabonkCoop.dll" DestinationFolder="$(GameDir)\BepInEx\plugins\MegabonkCoop" />
+  </Target>
+</Project>

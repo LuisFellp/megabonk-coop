@@ -1,0 +1,18 @@
+bin/
+obj/
+*.user
+.vs/
+# local tools and outputs (portable SDK, decompiler, test logs, packages)
+tools/dotnet/
+tools/ilspy/
+tools/failed-*/
+tools/night/
+tools/*.out
+tools/*.log
+tools/last-report.md
+dist/out/
+dist/pkg/files/
+dist/pkg/*.md
+dist/pkg/*.txt
+dist/update/*.dll
+*.zip
